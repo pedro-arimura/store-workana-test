@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <button class="return" style="display: inline-block">Return</button>
+    <h2 class="tableTitle" style="display: inline-block; margin-left: 12px;">Registered Orders</h2>
+    <table class="registeredTable">
+        <thead>
+            <th>Order Products</th>
+            <th>Order Value</th>
+        </thead>
+        <tbody>
+            <tr *ngIf="empty_orders">
+                <td colspan="2">There aren't any orders yet!</td>
+            </tr>
+            <tr *ngFor="let order of orders_list">
+                <th>{{ order.order_products }}</th>
+                <th>{{ order.order_value }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

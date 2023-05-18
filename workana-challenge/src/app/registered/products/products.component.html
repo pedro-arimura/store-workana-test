@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <button class="return" style="display: inline-block" (click)="returnMenu()">Return</button>
+    <h2 class="tableTitle" style="display: inline-block; margin-left: 12px;">Registered Products</h2>
+    <table class="registeredTable">
+        <thead>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Value</th>
+            <th>Product Tax</th>
+            <th>Product Price (with tax)</th>
+        </thead>
+        <tbody>
+            <tr *ngIf="empty_products" style="text-align: center;">
+                <td colspan="5">There aren't any products registered yet!</td>
+            </tr>
+            <tr *ngFor="let product of products_list">
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.category_name }}</td>
+                <td>{{ product.product_price }}</td>
+                <td>{{ (product.product_price * (product.category_tax/100)).toFixed(2) }}</td>
+                <td>{{ getSum(product.product_price, product.product_price * (product.category_tax/100)) }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

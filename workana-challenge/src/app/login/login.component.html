@@ -1,0 +1,14 @@
+<div>
+    <form (submit)="onSubmit()" class="loginForm">
+        <h2 style="text-align: center;">Login</h2>
+        <div>
+            <label for="username" class="inputLabel">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" placeholder="Your e-mail address..." class="inputForm" required>
+        </div>
+        <div>
+            <label for="password" class="inputLabel">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Your password..." class="inputForm" required>
+        </div>
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+</div>

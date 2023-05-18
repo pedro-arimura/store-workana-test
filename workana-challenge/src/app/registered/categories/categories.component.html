@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <button class="return" style="display: inline-block" (click)="returnMenu()">Return</button>
+    <h2 class="tableTitle" style="display: inline-block; margin-left: 12px;">Registered Categories</h2>
+    <table class="registeredTable">
+        <thead>
+            <th>Category Name</th>
+            <th>Category Tax</th>
+        </thead>
+        <tbody>
+            <tr *ngIf="empty_categories">
+                <td colspan="2">There aren't any categories registered yet!</td>
+            </tr>
+            <tr *ngFor="let category of categories_list">
+                <td>{{ category.category_name }}</td>
+                <td>{{ category.category_tax }}%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
